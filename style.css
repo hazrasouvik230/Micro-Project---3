@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
+    transition: 1s ease-in;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
 
 h1{
     color: #fff;
+    font-size: 30px;
 }
 
 .container {
@@ -84,4 +86,89 @@ h1{
     color: #fff;
     font-size: 24px;
     letter-spacing: 2px;
+}
+
+@media (max-width: 1010px) {
+    .container {
+        width: 465px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    .result {
+        height: 80px;
+        font-size: 40px;
+    }
+    .btnSection {
+        height: 440px;
+    }
+    .child {
+        height: 370px;
+        grid-template-columns: repeat(4, 90px);
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+    .resetBtn {
+        width: 195px;
+    }
+    .equalBtn {
+        width: 195px;
+    }
+}
+@media (max-width: 640px) {
+    .container {
+        width: 400px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .result {
+        height: 60px;
+        font-size: 30px;
+    }
+    .btnSection {
+        height: 400px;
+    }
+    .child {
+        height: 360px;
+        grid-template-columns: repeat(4, 80px);
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    .resetBtn {
+        width: 170px;
+    }
+    .equalBtn {
+        width: 170px;
+    }
+}
+@media (max-width: 425px) {
+    .container {
+        width: 335px;
+    }
+    h1 {
+        font-size: 15px;
+    }
+    .result {
+        height: 40px;
+        font-size: 20px;
+    }
+    .btnSection {
+        height: 360px;
+    }
+    .child {
+        height: 340px;
+        grid-template-columns: repeat(4, 70px);
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    .btn {
+        height: 50px;
+    }
+    .resetBtn {
+        width: 150px;
+    }
+    .equalBtn {
+        width: 150px;
+    }
 }

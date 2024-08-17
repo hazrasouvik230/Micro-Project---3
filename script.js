@@ -1,47 +1,53 @@
 let button = document.querySelectorAll("button");
 let string = "";
 let arr = Array.from(button);
-for(let i of arr) {
-    i.addEventListener("click", () => {
-        if(i.innerHTML == "=") {
-            string = eval(string);
-            if(string % 1 === 0) {
-                result.value = string;
+for(let elements of arr) {
+    elements.addEventListener("click", () => {
+        if(elements.innerText == "=") {
+            try {
+                string = eval(string.replace(/x/g, '*'));
+                if(string % 1 == 0) {
+                    result.value = string;
+                }
+                else {
+                    string = string.toFixed(3);
+                    result.value = string;
+                }
             }
-            else {
-                result.value = string.toFixed(2);
+            catch(error) {
+                result.value = "Error";
             }
         }
         else {
-            if(i.innerHTML == "RESET") {
+            if(elements.innerText == "DEL") {
+                string = string.toString();
+                string = string.slice(0, -1);
+                result.value = string;
+            }
+            else if(elements.innerText == "RESET") {
                 string = "";
                 result.value = string;
             }
-            else if(i.innerHTML == "DEL") {
-                string = string.slice(0, string.length-1);
+            else if(elements.innerText == "+") {
+                string += " "+ elements.innerText + " ";
                 result.value = string;
             }
-            else if(i.innerHTML == "+") {
-                string += " "+i.innerText+" ";
+            else if(elements.innerText == "-") {
+                string += " "+ elements.innerText + " ";
                 result.value = string;
             }
-            else if(i.innerHTML == "-") {
-                string += " "+i.innerText+" ";
+            else if(elements.innerText == "x") {
+                string += " "+ elements.innerText + " ";
                 result.value = string;
             }
-            else if(i.innerHTML == "*") {
-                string += " "+i.innerText+" ";
-                result.value = string;
-            }
-            else if(i.innerHTML == "/") {
-                string += " "+i.innerText+" ";
+            else if(elements.innerText == "/") {
+                string += " "+ elements.innerText + " ";
                 result.value = string;
             }
             else {
-                string += i.innerText;
+                string += elements.innerText;
                 result.value = string;
             }
         }
-    })
+    });
 }
-
